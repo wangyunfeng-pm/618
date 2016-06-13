@@ -4,3 +4,8 @@
 根目录是宾客访问地址
 
 大屏显示是/monitor地址
+
+```
+npm install
+node bing/www.js
+```
