@@ -7,5 +7,5 @@
 
 ```
 npm install
-node bing/www.js
+node bin/www.js
 ```
