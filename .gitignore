@@ -1,0 +1,6 @@
+.DS_Store
+public/build
+node_modules
+.idea
+pm2_log
+*.log
