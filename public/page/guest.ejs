@@ -54,15 +54,15 @@
       w.initEvent();
     },
 
-    initEvent: function(){
+    initEvent: function() {
       var w = this;
 
-      w.socket.on('init', function(d){
+      w.socket.on('init', function(d) {
         $('#submit').text(d.text);
         w.data = d;
       });
 
-      $('#submit').bind('touchstart', function(event){
+      $('#submit').bind('touchstart', function(event) {
         w.socket.emit('submit', w.data);
       })
     }
