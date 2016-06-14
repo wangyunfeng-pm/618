@@ -6,11 +6,23 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="email=no"/>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
-    <title>allen</title>
+    <title></title>
+    <style>
+    *{margin:0;padding:0;box-sizing: border-box;}
+    *, *:active, *:focus{outline: 0 none;}
+    html body{height: 100%;width: 100%;}
+    body{font-size:12px;}
+
+    .app{position: absolute;width:100%;height: 100%;background: url('https://dn-caicloudui.qbox.me/ddy/2.jpg') top no-repeat;background-size: 100%;}
+    </style>
+
   </head>
 
   <body>
-    <div id="app"></div>
+    <div class="app">
+      <div id="text"></div>
+    </div>
+
   </body>
 
 <script src="/js/zepto.min.js"></script>
@@ -38,7 +50,7 @@
         for(var i=0;i<w.length; i++){
           var div = $('<div></div>');
           div.attr('id', i);
-          $('#app').append(div);
+          $('#text').append(div);
         }
       })
 
