@@ -43,7 +43,8 @@
 
     init: function() {
       var w = this;
-      var socket = io.connect('http://localhost:8080');
+
+      var socket = io.connect(window.location.origin);
       w.socket = socket;
 
       w.initEvent();
