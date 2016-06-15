@@ -47,7 +47,7 @@
     init: function() {
       var w = this;
 
-      var socket = io.connect(window.location.href);
+      var socket = io.connect(window.location.origin);
       w.socket = socket;
 
       w.initEvent();
