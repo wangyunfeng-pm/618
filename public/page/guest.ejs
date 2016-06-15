@@ -31,9 +31,7 @@
       <input type="text" placeholder="请输入昵称" />
 
     </div>
-    <div class="btn" id="submit">
-      的
-    </div>
+    <div class="btn" id="submit"></div>
     <div id="app"></div>
   </body>
 
@@ -48,7 +46,8 @@
 
     init: function() {
       var w = this;
-      var socket = io.connect('http://192.168.31.169:8080');
+
+      var socket = io.connect(window.location.href);
       w.socket = socket;
 
       w.initEvent();
