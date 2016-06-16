@@ -28,8 +28,7 @@
     <div class="app"></div>
     <div class="tip">触摸心形发送信息</div>
     <div class="input">
-      <input type="text" placeholder="请输入昵称" />
-
+      <input id="guestName" type="text" placeholder="请输入名字" />
     </div>
     <div class="btn" id="submit"></div>
     <div id="app"></div>
@@ -38,7 +37,7 @@
 <script src="/js/zepto.min.js"></script>
 <script src="/js/socket.io.js"></script>
 <script>
-(function(){
+(function() {
   var doc = document, body = doc.body;
 
   var chat = {
@@ -62,8 +61,9 @@
       });
 
       $('#submit').bind('touchstart', function(event) {
+        w.data.guestName = $('#guestName').val();
         w.socket.emit('submit', w.data);
-      })
+      });
     }
   }
 
