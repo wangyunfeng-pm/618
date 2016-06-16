@@ -17,9 +17,12 @@ module.exports = function(app) {
   app.get('/monitor', function (req, res) {
     res.render('monitor')
   });
+  app.get('/raffle', function (req, res) {
+    socket.raffle()
+    res.render('raffle')
+  });
   app.get('/end', function (req, res) {
     socket.end()
     res.render('end')
   });
-
 };
