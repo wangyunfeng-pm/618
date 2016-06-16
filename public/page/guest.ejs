@@ -67,10 +67,6 @@
         $('#info').show().text('感谢参与！')
         w.socket.emit('submit', w.data);
       });
-
-      $('#submit').bind('click', function(event) {
-        w.socket.emit('submit', w.data);
-      });
     }
   }
 
