@@ -75,6 +75,10 @@
           $('#' + i).addClass('enter').text(fullstr[i]);
         }
       });
+
+      w.socket.on('raffle', function(d) {
+        console.log(d);
+      });
     }
   }
 
