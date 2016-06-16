@@ -43,6 +43,7 @@
 
     init: function() {
       var w = this;
+      var fullstr = "";
 
       var socket = io.connect(window.location.origin);
       w.socket = socket;
@@ -53,17 +54,26 @@
     initEvent: function(){
       var w = this;
 
-      w.socket.on('displayInit', function(d){
+      w.socket.on('displayInit', function(d) {
         w.length = d.str.length;
-        for(var i=0;i<w.length; i++){
+        for (var i = 0; i < w.length; i++) {
           var div = $('<div class="text"></div>');
           div.attr('id', i);
           $('#text').append(div);
         }
+        if (d.str) {
+          fullstr = d.str;
+        }
       })
 
-      w.socket.on('display', function(d){
+      w.socket.on('display', function(d) {
         $('#' + d.index).addClass('enter').text(d.text);
+      });
+
+      w.socket.on('end', function(d) {
+        for (var i = 0; i < fullstr.length; i++ ) {
+          $('#' + i).addClass('enter').text(fullstr[i]);
+        }
       });
     }
   }
