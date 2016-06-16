@@ -1,7 +1,7 @@
 
 var _ = require('underscore');
 var util = require('./lib/util');
-var socket = require('./lib/socket.io.js')
+var socket = require('./lib/socket.io.js');
 
 
 module.exports = function(app) {
@@ -17,8 +17,9 @@ module.exports = function(app) {
   app.get('/monitor', function (req, res) {
     res.render('monitor')
   });
-  app.get('/debugdebug', function (req, res) {
-    res.status(200);
+  app.get('/end', function (req, res) {
+    socket.end()
+    res.render('end')
   });
 
 };
