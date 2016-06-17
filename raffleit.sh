@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl localhost:8080/raffle
+curl love.caicloud.io/raffle
