@@ -20,15 +20,15 @@
 
       .input{position: absolute;top:3rem;left:0;width:100%;height:40px;text-align: center;}
       .input input{width:50%;height: 100%;line-height: 30px;height: 30px;font-size:14px;padding:0 5px;border: #aaa 1px solid;text-align: center;border-radius: 4px;}
-      .tip{position:absolute;top:0;left:0;width:100%;text-align: center;color:#333;padding:2px 0;background: #eee;}
+      .tip{position:absolute;top:0;left:0;width:100%;text-align: center;color:#333;padding:2px 0;font-size:1.4rem;background: #eee;}
       .info{position:absolute;top:0;left:0;width: 100%;text-align: center;padding:6px;font-size:1.4rem;background: #fff;display: none}
     </style>
   </head>
 
   <body>
     <div class="app"></div>
-    <div class="tip">触摸心形发送信息</div>
-    <div class="info" id="info">感谢参与！</div>
+    <div class="tip">输入您的姓名后，触摸心形发送</div>
+    <div class="info" id="info">感谢您的帮助！</div>
     <div class="input">
       <input id="guestName" type="text" placeholder="请输入名字" />
     </div>
@@ -61,11 +61,14 @@
         w.data = d;
       });
 
-
       $('#submit').bind('touchstart', function(event) {
         w.data.guestName = $('#guestName').val();
-        $('#info').show().text('感谢参与！')
-        w.socket.emit('submit', w.data);
+        if (w.data.guestName == "") {
+          $('#info').show().text('请输入您的姓名！');
+        } else {
+          $('#info').show().text('感谢您的帮助！');
+          w.socket.emit('submit', w.data);
+        }
       });
     }
   }
