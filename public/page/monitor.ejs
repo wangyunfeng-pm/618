@@ -79,6 +79,9 @@
       });
 
       w.socket.on('raffle', function(d) {
+        function leave(index){
+          $('#' + i).addClass('leave');
+        }
         for (var i= 0; i < d.length; i++) {
           $('#' + d[i]).addClass('ddy')
         }
